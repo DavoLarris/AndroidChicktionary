@@ -10,10 +10,10 @@ public class Person implements Serializable {
     private String name;
     private String email;
     private Integer phone;
-    private Float rating;
+    private Integer rating;
     private String picture;
 
-    public Person (String name, String email, int phone, float rating, String picture) {
+    public Person (String name, String email, int phone, int rating, String picture) {
         this.email = email;
         this.name = name;
         this.phone = phone;
@@ -45,11 +45,11 @@ public class Person implements Serializable {
         this.phone = phone;
     }
 
-    public Float getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(Float rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
 
