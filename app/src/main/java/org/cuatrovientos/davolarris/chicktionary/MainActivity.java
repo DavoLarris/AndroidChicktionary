@@ -1,12 +1,12 @@
 package org.cuatrovientos.davolarris.chicktionary;
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupCustomList() {
 
-        ListAdapter customizedListAdapter = new ListAdapter(this, people);
+        CustomListAdapter customizedListAdapter = new CustomListAdapter(this, people);
 
         listViewPeople = (ListView) findViewById(R.id.idListView);
 
@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
         listViewPeople.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Toast.makeText(MainActivity.this, "You pressed " + position, Toast.LENGTH_SHORT).show();
+                Intent myIntent = new Intent(MainActivity.this, DetailActivity.class);
+                myIntent.putExtra("Persona", people.get(position));
+                startActivity(myIntent);
             }
         });
 

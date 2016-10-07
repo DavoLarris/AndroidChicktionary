@@ -15,12 +15,12 @@ import java.util.ArrayList;
  * Created by David on 06/10/2016.
  */
 
-public class ListAdapter extends BaseAdapter {
+public class CustomListAdapter extends BaseAdapter {
 
     private Activity activity;
     private ArrayList<Person> people;
 
-    public ListAdapter(Activity act, ArrayList<Person> peo) {
+    public CustomListAdapter(Activity act, ArrayList<Person> peo) {
         super();
         this.activity = act;
         this.people = peo;
@@ -47,7 +47,7 @@ public class ListAdapter extends BaseAdapter {
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inflater.inflate(R.layout.list_row,null);
+            v = inflater.inflate(R.layout.list_row, null);
 
         }
 
@@ -62,6 +62,6 @@ public class ListAdapter extends BaseAdapter {
         TextView textViewText = (TextView) v.findViewById(R.id.puntacion);
         textViewText.setText(persona.getRating().toString());
 
-        return null;
+        return v;
     }
 }
