@@ -11,14 +11,14 @@ public class Person implements Serializable {
     private String email;
     private Integer phone;
     private Integer rating;
-    private String picture;
+    private Integer foto;
 
-    public Person (String name, String email, int phone, int rating, String picture) {
+    public Person (String name, String email, int phone, int rating, int foto) {
         this.email = email;
         this.name = name;
         this.phone = phone;
-        this.picture = picture;
         this.rating = rating;
+        this.foto = foto;
     }
 
     public String getName() {
@@ -53,12 +53,12 @@ public class Person implements Serializable {
         this.rating = rating;
     }
 
-    public String getPicture() {
-        return picture;
+    public Integer getFoto() {
+        return foto;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
+    public void setFoto(Integer foto) {
+        this.foto = foto;
     }
 
     @Override
@@ -68,7 +68,7 @@ public class Person implements Serializable {
                 ", email='" + email + '\'' +
                 ", phone=" + phone +
                 ", rating=" + rating +
-                ", picture='" + picture + '\'' +
-                '}';
+                ", foto =" + foto +
+                "}'";
     }
 }

@@ -1,9 +1,11 @@
 package org.cuatrovientos.davolarris.chicktionary;
 
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -12,6 +14,7 @@ public class DetailActivity extends AppCompatActivity {
     private Person persona;
     private TextView txtNombre, txtEmail, txtNumero, txtNota;
     private ProgressBar progress;
+    private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,7 @@ public class DetailActivity extends AppCompatActivity {
         txtNota = (TextView)findViewById(R.id.idMark);
         txtNumero = (TextView)findViewById(R.id.idTel);
         progress = (ProgressBar)findViewById(R.id.progressBar2);
+        image = (ImageView) findViewById(R.id.foto);
 
 
 
@@ -36,6 +40,7 @@ public class DetailActivity extends AppCompatActivity {
             txtNota.setText(persona.getRating().toString());
             txtNumero.setText(persona.getPhone().toString());
             progress.setProgress(persona.getRating());
+            image.setImageResource(persona.getFoto());
         }
 
 

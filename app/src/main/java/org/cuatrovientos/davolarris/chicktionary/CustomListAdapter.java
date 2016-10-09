@@ -20,6 +20,7 @@ public class CustomListAdapter extends BaseAdapter {
     private Activity activity;
     private ArrayList<Person> people;
 
+
     public CustomListAdapter(Activity act, ArrayList<Person> peo) {
         super();
         this.activity = act;
@@ -54,7 +55,7 @@ public class CustomListAdapter extends BaseAdapter {
         Person persona = people.get(position);
 
         ImageView imageViewIcon = (ImageView) v.findViewById(R.id.picture);
-        imageViewIcon.setImageResource(R.drawable.pedo_copy);
+        imageViewIcon.setImageResource(persona.getFoto());
 
         TextView textViewTitle = (TextView) v.findViewById(R.id.nombre);
         textViewTitle.setText(persona.getName());

@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private ListView listViewPeople;
     private ArrayList<Person> people;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,15 +28,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupData () {
         people = new ArrayList<Person>();
-        people.add(new Person("Hey", "davo.larris@gmail.com", 46631158, 10, "yo.png"));
-        people.add(new Person("Guapo", "guapo@gmail.com", 452535, 8, "yo.png"));
-        people.add(new Person("Jaja", "jajaja@gmail.com", 4567865, 6, "yo.png"));
+        people.add(new Person("Hey", "davo.larris@gmail.com", 46631158, 10, R.drawable.uno));
+        people.add(new Person("Guapo", "guapo@gmail.com", 452535, 8, R.drawable.dos));
+        people.add(new Person("Jaja", "jajaja@gmail.com", 4567865, 6, R.drawable.tres));
      }
 
 
     private void setupCustomList() {
 
+
         CustomListAdapter customizedListAdapter = new CustomListAdapter(this, people);
+
+
 
         listViewPeople = (ListView) findViewById(R.id.idListView);
 
